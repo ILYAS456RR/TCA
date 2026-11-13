@@ -1,0 +1,87 @@
+TCA ADVISORY — SITE WEB (HTML / CSS / JS)
+=========================================
+
+Contenu du dossier
+------------------
+index.html            La page d'accueil TCA Advisory (tout le texte est ici)
+digital.html          La page TCA Digital (lien « TCA Digital » dans le menu)
+css/styles.css        Styles de la page d'accueil (noir, or et tons clairs du logo)
+css/digital.css       Styles de la page TCA Digital (couleurs du logo Digital :
+                      violet #5E2FF9 → pourpre #9845BB → rose #CD5E79 → corail #F26657,
+                      indigo #24146C)
+js/main.js            Menu mobile, simulateur, liens WhatsApp, formulaire (mode d'envoi)
+envoyer.php           Réception du formulaire par e-mail + CSV (mode « php »)
+donnees/.htaccess     Protège le dossier où envoyer.php range les demandes
+backend/              Script Google Sheets (mode « sheets »)
+assets/img/           Logos TCA Advisory (clair pour fonds noirs / taupe aux couleurs d'origine), logos TCA Digital (couleur /
+                      DIGITAL en blanc pour fonds sombres), photo de l'équipe, favicons
+
+Voir le site
+------------
+Double-cliquez sur index.html : il s'ouvre dans votre navigateur.
+Une connexion internet est nécessaire pour les polices (Cormorant Garamond, Manrope).
+
+Mettre en ligne
+---------------
+Envoyez le dossier complet (index.html + css + js + assets) à la racine de votre
+hébergement (FTP, cPanel, Netlify, Vercel, GitHub Pages...). Aucun serveur ni base
+de données n'est nécessaire.
+
+À compléter avant la mise en ligne
+----------------------------------
+Recherchez les crochets [ ] dans index.html :
+- [Adresse e-mail TCA]
+- [Horaires d'ouverture]
+- digital.html : [Adresse e-mail TCA Digital] ; le numéro WhatsApp est le même que TCA Advisory
+- FAQ « Combien coûte votre accompagnement ? » : mode de rémunération
+- Pied de page : RC, ICE, IF
+- Liens « Mentions légales » et « Politique de confidentialité » (pages à créer)
+- Balise og:image : remplacer par l'adresse complète une fois le domaine choisi
+  (ex. https://www.votre-domaine.ma/assets/img/equipe.jpg)
+
+Réglages utiles
+---------------
+- Numéro WhatsApp : en haut de js/main.js (WHATSAPP = '212668173299')
+- Messages WhatsApp pré-remplis (y compris ceux de TCA Digital) : MESSAGES dans js/main.js
+- Seuil d'endettement du simulateur : SEUIL_ENDETTEMENT = 0.40 dans js/main.js
+- Couleurs : variables --noir, --or, --beige, --brun... en haut de css/styles.css
+
+Formulaire de contact : 4 modes d'envoi
+--------------------------------------
+Le mode se choisit en haut de js/main.js, avec deux lignes :
+    var ENVOI = 'whatsapp';
+    var ENDPOINT = '';
+
+1) 'whatsapp' (par défaut) — aucun serveur
+   La demande s'ouvre dans WhatsApp, pré-remplie ; le client appuie sur Envoyer.
+   Limite : si le client n'envoie pas, vous ne recevez rien.
+
+2) 'formspree' — le plus simple pour recevoir des e-mails
+   - Créez un compte sur formspree.io, puis un formulaire : vous obtenez une
+     adresse du type https://formspree.io/f/abcdwxyz
+   - Dans js/main.js :  ENVOI = 'formspree';  ENDPOINT = 'https://formspree.io/f/abcdwxyz';
+   - Chaque demande arrive par e-mail. L'offre gratuite limite le nombre d'envois par mois.
+
+3) 'php' — si votre hébergement accepte PHP (cPanel, hébergement mutualisé)
+   - Ouvrez envoyer.php et remplacez DESTINATAIRE et EXPEDITEUR par vos adresses
+     (EXPEDITEUR doit être une adresse de votre domaine, sinon les e-mails partent en spam).
+   - Dans js/main.js :  ENVOI = 'php';  ENDPOINT = 'envoyer.php';
+   - Envoyez aussi le dossier donnees/ (avec son fichier .htaccess) : les demandes y sont
+     enregistrées dans demandes.csv, qui s'ouvre dans Excel. Le .htaccess en bloque l'accès
+     depuis internet (serveurs Apache ; sur Nginx, demandez à l'hébergeur de bloquer /donnees).
+   - Mettez ENREGISTRER_CSV à false si vous ne voulez garder que l'e-mail.
+   - Si les e-mails n'arrivent pas, votre hébergeur bloque peut-être la fonction mail() :
+     il faut alors passer par un envoi SMTP (bibliothèque PHPMailer).
+
+4) 'sheets' — Google Sheet + e-mail, gratuit, sans hébergement PHP
+   - Suivez les 5 étapes en tête de backend/google-apps-script.gs
+   - Dans js/main.js :  ENVOI = 'sheets';  ENDPOINT = 'https://script.google.com/macros/s/.../exec';
+   - Chaque demande ajoute une ligne (avec une colonne « Statut ») et vous envoie un e-mail.
+
+Dans tous les modes : champ invisible anti-robots, consentement obligatoire (loi 09-08),
+et en cas d'échec, un lien propose au client d'envoyer sa demande par WhatsApp.
+
+Données personnelles : dès que les demandes sont conservées (fichier CSV, Google Sheet,
+boîte e-mail), il s'agit d'un traitement de données au sens de la loi 09-08.
+Prévoyez la déclaration auprès de la CNDP et décrivez ce traitement dans la politique
+de confidentialité (à faire valider par votre conseil).

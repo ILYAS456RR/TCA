@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulateur de crédit immobilier Maroc | TCA Advisory</title>
+  <meta name="description" content="Calculez votre mensualité assurance comprise, le coût total de votre crédit immobilier et votre capacité d&#x27;emprunt. Simulateur gratuit, sans inscription.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <!-- Domaine définitif : remplacer https://www.votre-domaine.ma puis activer ces lignes (voir LISEZMOI.txt)
+  <link rel="canonical" href="https://www.votre-domaine.ma/simulateur-credit-immobilier.html">
+  <meta property="og:url" content="https://www.votre-domaine.ma/simulateur-credit-immobilier.html">
+  -->
+  <meta name="theme-color" content="#0F0D0B">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_MA">
+  <meta property="og:site_name" content="TCA Advisory">
+  <meta property="og:title" content="Simulateur de crédit immobilier — TCA Advisory">
+  <meta property="og:description" content="Calculez votre mensualité assurance comprise, le coût total de votre crédit immobilier et votre capacité d&#x27;emprunt. Simulateur gratuit, sans inscription.">
+  <meta property="og:image" content="assets/img/partage-tca.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=20261113j">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Simulateur de crédit immobilier TCA Advisory",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Tous",
+        "isAccessibleForFree": true,
+        "inLanguage": "fr",
+        "description": "Calcul de la mensualité, assurance comprise, du coût total du crédit et de la capacité d'emprunt.",
+        "provider": {
+          "@type": "FinancialService",
+          "name": "TCA Advisory",
+          "legalName": "Tamwil Capital Advisory",
+          "telephone": "+212668173299",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "10, rue El Bassatine",
+            "addressLocality": "Casablanca",
+            "addressCountry": "MA"
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Le résultat du simulateur est-il garanti ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. La simulation est indicative : le taux et les conditions réels dépendent de votre profil et de la décision de la banque. Elle vous donne un ordre de grandeur avant l'étude personnalisée de votre dossier."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pourquoi un taux d'endettement de 40 % ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "C'est l'hypothèse retenue par notre simulateur pour estimer votre capacité d'emprunt, assurance comprise. Chaque banque applique ses propres critères selon votre profil."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment l'assurance est-elle calculée ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le taux d'assurance annuel s'applique au capital emprunté : la cotisation est la même chaque mois. Par défaut, le simulateur retient 0,50 % par an ; vous pouvez le modifier."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les frais de notaire et de dossier sont-ils inclus ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. La simulation porte sur le crédit et l'assurance, hors frais de dossier et frais de notaire."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le simulateur fonctionne-t-il pour un rachat de crédit ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Il donne la mensualité d'un nouveau crédit. Pour savoir si un rachat est intéressant, il faut aussi comparer avec ce qu'il vous reste à payer : voir notre page rachat de crédit."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- Barre supérieure -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span>Casablanca · Maroc — Particuliers, MRE et entreprises</span>
+      <div class="topbar__links">
+        <a href="tel:+212668173299">06 68 17 32 99</a>
+        <a class="topbar__wa" href="https://wa.me/212668173299" data-wa="general" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="topbar__social" href="https://www.instagram.com/tca_advisory/" target="_blank" rel="noopener" aria-label="TCA Advisory sur Instagram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+        <a class="topbar__social" href="https://www.linkedin.com/in/tca-advisory-4ab86a44a/" target="_blank" rel="noopener" aria-label="TCA Advisory sur LinkedIn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <!-- En-tête -->
+  <header class="site-header" id="haut">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="TCA Advisory — accueil">
+        <img src="assets/img/logo-tca-clair.png" alt="TCA Advisory" width="117" height="57">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="menu" aria-label="Navigation principale">
+        <div class="nav__groupe">
+          <a class="nav__parent" href="index.html#services">Nos services <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="nav__sous">
+          <a href="credit-immobilier-casablanca.html">Crédit immobilier</a>
+          <a href="credit-immobilier-mre.html">Crédit immobilier MRE</a>
+          <a href="rachat-de-credit.html">Rachat de crédit</a>
+          <a href="financement-entreprises.html">Entreprises &amp; promoteurs</a>
+          <a href="simulateur-credit-immobilier.html" aria-current="page">Simulateur de crédit</a>
+          </div>
+        </div>
+        <a href="simulateur-credit-immobilier.html" aria-current="page">Simulateur</a>
+        <a href="credit-immobilier-mre.html">Espace MRE</a>
+        <a href="index.html#cabinet">Le cabinet</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="nav__digital" href="digital.html">TCA Digital</a>
+        <a class="btn btn--or btn--sm" href="index.html#contact">Demander une étude</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="hero page-hero">
+      <svg class="hero__swoosh" viewBox="0 0 1440 360" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-40 350 C 420 150, 960 110, 1480 190"></path>
+        <path class="faint" d="M-40 372 C 460 190, 1000 165, 1480 238"></path>
+      </svg>
+      <div class="container page-hero__inner">
+        <nav class="fil-ariane" aria-label="Fil d'Ariane">
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#services">Nos services</a></li>
+            <li aria-current="page">Simulateur de crédit</li>
+          </ol>
+        </nav>
+        <div class="page-hero__texte" data-reveal>
+          <h1><span class="eyebrow">Simulateur gratuit · Crédit immobilier au Maroc</span> Calculez votre mensualité <em>et votre capacité d'emprunt.</em></h1>
+          <p class="lead">Montant, durée en mois, taux d'intérêt et taux d'assurance&nbsp;: le résultat s'affiche immédiatement. Pour une étude personnalisée, envoyez votre simulation sur WhatsApp.</p>
+          <div class="btn-row">
+            <a class="btn btn--or" href="#simulateur">Commencer la simulation <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <dl class="stats">
+            <div><dt>Gratuit</dt><dd>sans inscription</dd></div>
+            <div><dt>Assurance</dt><dd>comprise dans la mensualité</dd></div>
+            <div><dt>Taux</dt><dd>jusqu'à 9&nbsp;%</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--lin section--filet" id="simulateur">
+      <div class="container sim">
+        <form class="sim__inputs" id="simulateur-form" data-reveal onsubmit="return false">
+          <div class="stack-sm">
+            <span class="eyebrow">Simulateur</span>
+            <h2>Votre simulation.</h2>
+            <p class="muted">Une première estimation en quelques secondes, avant l'étude personnalisée de votre dossier par nos conseillers.</p>
+          </div>
+
+          <div class="sim__field">
+            <label for="sim-montant">Montant à financer</label>
+            <div class="sim__saisie">
+              <input id="sim-montant" type="text" inputmode="numeric" autocomplete="off" value="1 000 000" aria-describedby="aide-montant">
+              <span class="sim__unite" aria-hidden="true">MAD</span>
+            </div>
+            <span class="sim__aide" id="aide-montant">Sans plafond&nbsp;: saisissez le montant de votre projet.</span>
+          </div>
+
+          <div class="sim__field">
+            <label for="sim-duree">Durée du crédit (en mois)</label>
+            <div class="sim__saisie">
+              <input id="sim-duree" type="text" inputmode="numeric" autocomplete="off" value="240" aria-describedby="aide-duree">
+              <span class="sim__unite" aria-hidden="true">mois</span>
+            </div>
+            <span class="sim__aide" id="aide-duree">Soit 20&nbsp;ans</span>
+          </div>
+
+          <div class="sim__field">
+            <div class="sim__label-row">
+              <label for="sim-taux">Taux d'intérêt annuel</label>
+              <output id="out-taux" for="sim-taux">4,50&nbsp;%</output>
+            </div>
+            <input id="sim-taux" type="range" min="1" max="9" step="0.05" value="4.5">
+            <div class="sim__bornes" aria-hidden="true"><span>1&nbsp;%</span><span>9&nbsp;% max.</span></div>
+          </div>
+
+          <div class="sim__field">
+            <div class="sim__label-row">
+              <label for="sim-assurance">Taux d'assurance annuel</label>
+              <output id="out-assurance" for="sim-assurance">0,50&nbsp;%</output>
+            </div>
+            <input id="sim-assurance" type="range" min="0" max="2" step="0.01" value="0.5" aria-describedby="aide-assurance">
+            <div class="sim__bornes" aria-hidden="true"><span>0&nbsp;%</span><span>2&nbsp;%</span></div>
+            <span class="sim__aide" id="aide-assurance">Assurance calculée sur le capital emprunté.</span>
+          </div>
+
+          <div class="sim__field">
+            <label for="sim-revenus">Revenus nets mensuels du foyer</label>
+            <div class="sim__saisie">
+              <input id="sim-revenus" type="text" inputmode="numeric" autocomplete="off" value="25 000">
+              <span class="sim__unite" aria-hidden="true">MAD</span>
+            </div>
+          </div>
+        </form>
+
+        <div class="sim__result" data-reveal aria-live="polite">
+          <div class="stack-xs">
+            <span class="eyebrow eyebrow--sm">Mensualité estimée, assurance comprise</span>
+            <div class="sim__big"><span id="res-mensualite">6&nbsp;743</span><small>MAD / mois</small></div>
+          </div>
+          <div class="stack-xs">
+            <div class="sim__row sim__row--detail"><span>dont remboursement du crédit</span><strong id="res-credit">6&nbsp;326&nbsp;MAD</strong></div>
+            <div class="sim__row sim__row--detail"><span>dont assurance</span><strong id="res-assurance">417&nbsp;MAD</strong></div>
+          </div>
+          <hr>
+          <div class="sim__row"><span>Coût total des intérêts</span><strong id="res-interets">518&nbsp;359&nbsp;MAD</strong></div>
+          <div class="sim__row"><span>Coût total de l'assurance</span><strong id="res-cout-assurance">100&nbsp;000&nbsp;MAD</strong></div>
+          <div class="sim__row sim__row--total"><span>Coût total du crédit</span><strong id="res-cout-total">618&nbsp;359&nbsp;MAD</strong></div>
+          <hr>
+          <div class="stack-xs">
+            <div class="sim__row"><span>Taux d'endettement</span><strong id="res-ratio">27,0&nbsp;%</strong></div>
+            <div class="gauge"><div class="gauge__bar" id="res-jauge" style="width:27%"></div></div>
+            <span class="sim__note" id="res-note">Sous le seuil de 40&nbsp;% retenu dans cette simulation.</span>
+          </div>
+          <div class="sim__row"><span>Capacité d'emprunt estimée*</span><strong id="res-capacite">1&nbsp;482&nbsp;984&nbsp;MAD</strong></div>
+          <a class="btn btn--or btn--block" id="sim-whatsapp" href="https://wa.me/212668173299" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+            Recevoir mon étude sur WhatsApp
+          </a>
+          <a class="sim__alt" href="index.html#contact">ou par formulaire de contact</a>
+          <p class="fineprint">Simulation indicative, hors frais de dossier et frais de notaire. Assurance calculée sur le capital emprunté. *Capacité calculée sur 40&nbsp;% de vos revenus nets, assurance comprise. Le taux et les conditions réels dépendent de votre profil et de la banque.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--beige" id="calcul">
+      <div class="container split split--top">
+        <div class="stack-md" data-reveal>
+          <span class="eyebrow eyebrow--fonce">Le calcul</span>
+          <h2>Comment la mensualité est calculée.</h2>
+          <p class="lead lead--fonce">Le simulateur utilise la formule classique d'un crédit à mensualités constantes, puis ajoute l'assurance.</p>
+        </div>
+        <div class="encart stack-sm" data-reveal>
+          <p class="formule">Mensualité du crédit = C × t ÷ (1 − (1 + t)<sup>−n</sup>)</p>
+          <p>C est le montant emprunté, t le taux annuel divisé par 12, n la durée en mois.</p>
+          <p class="formule">Assurance mensuelle = C × taux d'assurance annuel ÷ 12</p>
+          <p>La capacité d'emprunt est le montant le plus élevé dont la mensualité, assurance comprise, reste sous 40&nbsp;% de vos revenus nets.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sable" id="faq-page">
+      <div class="container container--narrow stack-lg">
+        <div class="stack-sm center" data-reveal>
+          <span class="eyebrow eyebrow--fonce">Questions fréquentes</span>
+          <h2>Le simulateur&nbsp;: vos questions.</h2>
+        </div>
+        <div class="faq" data-reveal>
+          <details>
+            <summary>Le résultat du simulateur est-il garanti&nbsp;?</summary>
+            <p>Non. La simulation est indicative&nbsp;: le taux et les conditions réels dépendent de votre profil et de la décision de la banque. Elle vous donne un ordre de grandeur avant l'étude personnalisée de votre dossier.</p>
+          </details>
+          <details>
+            <summary>Pourquoi un taux d'endettement de 40&nbsp;%&nbsp;?</summary>
+            <p>C'est l'hypothèse retenue par notre simulateur pour estimer votre capacité d'emprunt, assurance comprise. Chaque banque applique ses propres critères selon votre profil.</p>
+          </details>
+          <details>
+            <summary>Comment l'assurance est-elle calculée&nbsp;?</summary>
+            <p>Le taux d'assurance annuel s'applique au capital emprunté&nbsp;: la cotisation est la même chaque mois. Par défaut, le simulateur retient 0,50&nbsp;% par an&nbsp;; vous pouvez le modifier.</p>
+          </details>
+          <details>
+            <summary>Les frais de notaire et de dossier sont-ils inclus&nbsp;?</summary>
+            <p>Non. La simulation porte sur le crédit et l'assurance, hors frais de dossier et frais de notaire.</p>
+          </details>
+          <details>
+            <summary>Le simulateur fonctionne-t-il pour un rachat de crédit&nbsp;?</summary>
+            <p>Il donne la mensualité d'un nouveau crédit. Pour savoir si un rachat est intéressant, il faut aussi comparer avec ce qu'il vous reste à payer&nbsp;: voir notre page <a href="rachat-de-credit.html">rachat de crédit</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+    <section class="section section--lin">
+      <div class="container stack-lg">
+        <div class="stack-sm" data-reveal>
+          <span class="eyebrow eyebrow--fonce">À voir aussi</span>
+          <h2>Nos autres solutions de financement.</h2>
+        </div>
+        <div class="liens-associes">
+          <a class="lien-associe" href="credit-immobilier-casablanca.html" data-reveal>
+            <strong>Crédit immobilier</strong>
+            <span>Résidence principale, secondaire ou investissement locatif.</span>
+            <span class="lien-associe__fleche">Découvrir <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="lien-associe" href="credit-immobilier-mre.html" data-reveal>
+            <strong>Crédit immobilier MRE</strong>
+            <span>Financer un bien au Maroc depuis l'étranger, à distance.</span>
+            <span class="lien-associe__fleche">Découvrir <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="lien-associe" href="rachat-de-credit.html" data-reveal>
+            <strong>Rachat de crédit</strong>
+            <span>Regrouper vos prêts en une seule mensualité.</span>
+            <span class="lien-associe__fleche">Découvrir <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section section--blush cta-bande">
+      <div class="container container--narrow stack-md center" data-reveal>
+        <span class="eyebrow eyebrow--fonce">Parlons de votre projet</span>
+        <h2>Passons de la simulation à votre dossier.</h2>
+        <p class="lead lead--fonce">Un conseiller reprend votre simulation, vérifie votre profil et vous dit ce qu'il est réaliste d'obtenir.</p>
+        <div class="btn-row">
+          <a class="btn btn--or" href="https://wa.me/212668173299" data-wa="immobilier" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg> Écrire sur WhatsApp</a>
+          <a class="btn btn--contour" href="tel:+212668173299"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> 06 68 17 32 99</a>
+        </div>
+        <a class="link-arrow" href="index.html#contact">Ou remplir le formulaire de contact <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container stack-lg">
+      <div class="footer__cols">
+        <div class="footer__brand">
+          <img src="assets/img/logo-tca-taupe.png" alt="TCA Advisory" width="170" height="82" loading="lazy" decoding="async">
+          <p>Votre partenaire financier au Maroc. Conseil en financement et courtage en crédit.</p>
+          <div class="reseaux">
+            <a href="https://www.instagram.com/tca_advisory/" target="_blank" rel="noopener" aria-label="TCA Advisory sur Instagram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+            <a href="https://www.linkedin.com/in/tca-advisory-4ab86a44a/" target="_blank" rel="noopener" aria-label="TCA Advisory sur LinkedIn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="Nos services">
+          <span class="eyebrow eyebrow--sm">Nos services</span>
+          <a href="credit-immobilier-casablanca.html">Crédit immobilier</a>
+          <a href="credit-immobilier-mre.html">Crédit immobilier MRE</a>
+          <a href="rachat-de-credit.html">Rachat de crédit</a>
+          <a href="financement-entreprises.html">Entreprises &amp; promoteurs</a>
+          <a href="financement-entreprises.html#leasing">Leasing</a>
+          <a href="simulateur-credit-immobilier.html">Simulateur de crédit</a>
+        </nav>
+        <nav aria-label="Le cabinet">
+          <span class="eyebrow eyebrow--sm">Le cabinet</span>
+          <a href="index.html#cabinet">À propos</a>
+          <a href="index.html#methode">Notre méthode</a>
+          <a href="index.html#international">Présence internationale</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="digital.html">TCA Digital</a>
+        </nav>
+        <div class="footer__contact">
+          <span class="eyebrow eyebrow--sm">Nous joindre</span>
+          <span>10, rue El Bassatine, Casablanca</span>
+          <a href="tel:+212668173299">06 68 17 32 99</a>
+          <a href="https://wa.me/212668173299" data-wa="general" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>Tamwil Capital Advisory — SARL au capital de 100&nbsp;000&nbsp;MAD — Siège&nbsp;: 10, rue El Bassatine, Casablanca — RC [—] · ICE [—] · IF [—]</span>
+        <div class="footer__legal-links">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Politique de confidentialité</a>
+          <span>© <span id="annee">2026</span> TCA Advisory</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/212668173299" data-wa="immobilier" target="_blank" rel="noopener" aria-label="Écrire à TCA Advisory sur WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+  </a>
+
+  <script src="js/main.js?v=20261113b" defer></script>
+</body>
+</html>

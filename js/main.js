@@ -3,7 +3,7 @@
    - menu mobile
    - liens WhatsApp pré-remplis
    - simulateur de crédit
-   - formulaire de contact (WhatsApp, Formspree, PHP ou Google Sheets)
+   - formulaire de contact (la demande s'ouvre dans WhatsApp, pré-remplie)
    - apparition des blocs au défilement
    ========================================================================== */
 (function () {
@@ -13,20 +13,12 @@
   var WHATSAPP = '212668173299';        // numéro au format international, sans + ni espaces
   var SEUIL_ENDETTEMENT = 0.40;         // 40 % des revenus nets, hypothèse du simulateur
 
-  /* Formulaire de contact : choisissez UN mode d'envoi
-     'whatsapp'  : ouvre WhatsApp avec la demande pré-remplie (aucun serveur) — par défaut
-     'formspree' : service en ligne, la demande arrive par e-mail
-                   ENDPOINT = 'https://formspree.io/f/VOTRE_CODE'
-     'php'       : script envoyer.php sur votre hébergement (e-mail + fichier CSV)
-                   ENDPOINT = 'envoyer.php'
-     'sheets'    : Google Sheet + e-mail, via backend/google-apps-script.gs
-                   ENDPOINT = 'https://script.google.com/macros/s/VOTRE_ID/exec' */
-  var ENVOI = 'whatsapp';
-  var ENDPOINT = '';
-
   var MESSAGES = {
     general: 'Bonjour TCA Advisory, je souhaite être accompagné(e) pour un financement.',
     mre: 'Bonjour TCA Advisory, je suis MRE et je souhaite financer un bien au Maroc.',
+    immobilier: 'Bonjour TCA Advisory, je souhaite être accompagné(e) pour un crédit immobilier.',
+    rachat: 'Bonjour TCA Advisory, je souhaite étudier un rachat de crédit.',
+    entreprise: 'Bonjour TCA Advisory, je souhaite être accompagné(e) pour le financement de mon entreprise.',
     digital: 'Bonjour TCA Digital, je souhaite échanger sur la présence digitale de mon entreprise.',
     cadrage: 'Bonjour TCA Digital, je souhaite planifier une réunion de cadrage.'
   };
@@ -171,96 +163,29 @@
     calculer();
   }
 
-  /* ---------- Formulaire de contact ---------- */
+  /* ---------- Formulaire de contact : envoi par WhatsApp ---------- */
   var form = document.getElementById('contact-form');
   var succes = document.getElementById('form-success');
   var erreur = document.getElementById('form-error');
-  var bouton = document.getElementById('form-submit');
 
-  function texte(id, valeur) {
-    var el = document.getElementById(id);
-    if (el) { el.textContent = valeur; }
-  }
-
-  function lienExterne(href, libelle) {
-    var a = document.createElement('a');
-    a.href = href; a.target = '_blank'; a.rel = 'noopener'; a.textContent = libelle;
-    return a;
-  }
-
-  function donneesFormulaire() {
-    return {
-      nom: form.nom.value.trim(),
-      telephone: form.telephone.value.trim(),
-      projet: form.projet.value,
-      montant: form.montant.value.trim(),
-      ville: form.ville.value.trim(),
-      message: form.message.value.trim(),
-      consentement: form.consentement.checked ? 'oui' : '',
-      site_web: form.site_web ? form.site_web.value : ''   // piège à robots
-    };
-  }
-
-  function lienDemandeWhatsApp(d) {
-    var lignes = ['Bonjour TCA Advisory,', 'Nom : ' + d.nom, 'Téléphone : ' + d.telephone, 'Projet : ' + d.projet];
-    if (d.montant) { lignes.push('Montant estimé : ' + d.montant + ' MAD'); }
-    if (d.ville) { lignes.push('Ville / pays : ' + d.ville); }
-    if (d.message) { lignes.push('Message : ' + d.message); }
+  /* Construit le message WhatsApp à partir des champs remplis */
+  function lienDemandeWhatsApp() {
+    var lignes = [
+      'Bonjour TCA Advisory,',
+      'Nom : ' + form.nom.value.trim(),
+      'Téléphone : ' + form.telephone.value.trim(),
+      'Projet : ' + form.projet.value
+    ];
+    var montant = form.montant.value.trim();
+    var ville = form.ville.value.trim();
+    var message = form.message.value.trim();
+    if (montant) { lignes.push('Montant estimé : ' + montant + ' MAD'); }
+    if (ville) { lignes.push('Ville / pays : ' + ville); }
+    if (message) { lignes.push('Message : ' + message); }
     return lienWhatsApp(lignes.join('\n'));
   }
 
-  /* Envoie la demande au service choisi dans ENVOI. Renvoie une promesse. */
-  function envoyer(d) {
-    if (!ENDPOINT) { return Promise.reject(new Error('ENDPOINT non renseigné dans js/main.js')); }
-
-    if (ENVOI === 'formspree') {
-      var fd = new FormData();
-      ['nom', 'telephone', 'projet', 'montant', 'ville', 'message', 'consentement'].forEach(function (k) { fd.append(k, d[k]); });
-      fd.append('_gotcha', d.site_web);                                   // anti-robot de Formspree
-      fd.append('_subject', 'Nouvelle demande — ' + d.projet + ' — ' + d.nom);
-      return fetch(ENDPOINT, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
-        .then(function (r) { if (!r.ok) { throw new Error('Formspree a répondu ' + r.status); } });
-    }
-
-    if (ENVOI === 'php') {
-      var corps = new FormData();
-      Object.keys(d).forEach(function (k) { corps.append(k, d[k]); });
-      return fetch(ENDPOINT, { method: 'POST', body: corps, headers: { Accept: 'application/json' } })
-        .then(function (r) { return r.json().catch(function () { return { ok: false, erreur: 'Réponse illisible (' + r.status + ')' }; }); })
-        .then(function (rep) { if (!rep.ok) { throw new Error(rep.erreur || 'Envoi refusé'); } });
-    }
-
-    if (ENVOI === 'sheets') {
-      // Google Apps Script n'autorise pas la lecture de sa réponse depuis un autre site :
-      // la requête part en mode « no-cors » et on la considère réussie s'il n'y a pas d'erreur réseau.
-      return fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(d) });
-    }
-
-    return Promise.reject(new Error('Mode d\'envoi inconnu : ' + ENVOI));
-  }
-
-  function afficherSucces(lien) {
-    if (ENVOI === 'whatsapp') {
-      document.getElementById('form-success-link').href = lien;
-    } else {
-      texte('form-success-label', 'Demande envoyée');
-      texte('form-success-title', 'Merci, votre demande est bien arrivée. Un conseiller vous recontacte.');
-      var detail = document.getElementById('form-success-detail');
-      detail.textContent = 'Une question urgente ? Appelez-nous au 06 68 17 32 99 ou ';
-      detail.appendChild(lienExterne(lien, 'écrivez-nous sur WhatsApp'));
-      detail.appendChild(document.createTextNode('.'));
-    }
-    form.hidden = true;
-    succes.hidden = false;
-    succes.setAttribute('tabindex', '-1');
-    succes.focus();
-  }
-
   if (form && succes) {
-    if (ENVOI !== 'whatsapp') {
-      texte('form-hint', 'Vos données servent uniquement à vous recontacter.');
-    }
-
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var nom = form.nom, tel = form.telephone, consentement = form.consentement;
@@ -284,34 +209,13 @@
       }
       erreur.hidden = true;
 
-      var d = donneesFormulaire();
-      var lien = lienDemandeWhatsApp(d);
-
-      if (d.site_web) { afficherSucces(lien); return; }          // robot : on n'envoie rien
-
-      if (ENVOI === 'whatsapp') {
-        window.open(lien, '_blank', 'noopener');
-        afficherSucces(lien);
-        return;
-      }
-
-      var libelle = bouton.textContent;
-      bouton.disabled = true;
-      bouton.textContent = 'Envoi en cours…';
-
-      envoyer(d)
-        .then(function () { afficherSucces(lien); })
-        .catch(function (err) {
-          if (window.console) { console.error('Formulaire TCA :', err); }
-          erreur.textContent = 'L\'envoi n\'a pas abouti. Réessayez dans un instant, ou ';
-          erreur.appendChild(lienExterne(lien, 'envoyez votre demande sur WhatsApp'));
-          erreur.appendChild(document.createTextNode('.'));
-          erreur.hidden = false;
-        })
-        .then(function () {
-          bouton.disabled = false;
-          bouton.textContent = libelle;
-        });
+      var lien = lienDemandeWhatsApp();
+      window.open(lien, '_blank', 'noopener');
+      document.getElementById('form-success-link').href = lien;   // secours si WhatsApp ne s'ouvre pas
+      form.hidden = true;
+      succes.hidden = false;
+      succes.setAttribute('tabindex', '-1');
+      succes.focus();
     });
 
     document.getElementById('form-reset').addEventListener('click', function () {

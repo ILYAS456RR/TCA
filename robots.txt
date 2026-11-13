@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# À activer quand le domaine est choisi (remplacer votre-domaine.ma) :
+# Sitemap: https://www.votre-domaine.ma/sitemap.xml

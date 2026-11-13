@@ -5,16 +5,25 @@ Contenu du dossier
 ------------------
 index.html            La page d'accueil TCA Advisory (tout le texte est ici)
 digital.html          La page TCA Digital (lien « TCA Digital » dans le menu)
+credit-immobilier-casablanca.html   Page service : crédit immobilier
+credit-immobilier-mre.html          Page service : crédit immobilier MRE (à distance)
+rachat-de-credit.html               Page service : rachat de crédit (avec exemple chiffré)
+financement-entreprises.html        Page service : professionnels, entreprises, promoteurs, leasing
+simulateur-credit-immobilier.html   Page du simulateur + explication du calcul
 css/styles.css        Styles de la page d'accueil (noir, or et tons clairs du logo)
 css/digital.css       Styles de la page TCA Digital (couleurs du logo Digital :
                       violet #5E2FF9 → pourpre #9845BB → rose #CD5E79 → corail #F26657,
                       indigo #24146C)
-js/main.js            Menu mobile, simulateur, liens WhatsApp, formulaire (mode d'envoi)
-envoyer.php           Réception du formulaire par e-mail + CSV (mode « php »)
-donnees/.htaccess     Protège le dossier où envoyer.php range les demandes
-backend/              Script Google Sheets (mode « sheets »)
+js/main.js            Menu mobile, simulateur, liens WhatsApp, formulaire (envoi par WhatsApp)
+mentions-legales.html Mentions légales (modèle à compléter, à faire valider)
+confidentialite.html  Politique de confidentialité loi 09-08 (modèle à compléter, à faire valider)
+404.html              Page « introuvable » affichée par Vercel pour une adresse inexistante
+robots.txt            Autorise l'indexation par Google
+sitemap.xml           Plan du site pour Google (domaine à renseigner)
+vercel.json           Réglages Vercel : mise en cache des images, CSS et JS (7 jours)
+.vercelignore         Empêche la publication de ce guide sur Vercel (fichier caché)
 assets/img/           Logos TCA Advisory (clair pour fonds noirs / taupe aux couleurs d'origine), logos TCA Digital (couleur /
-                      DIGITAL en blanc pour fonds sombres), photo de l'équipe, favicons
+                      DIGITAL en blanc pour fonds sombres), portrait (haut de page), photo de l'équipe (aperçu de lien), favicons
 
 Voir le site
 ------------
@@ -27,6 +36,15 @@ Envoyez le dossier complet (index.html + css + js + assets) à la racine de votr
 hébergement (FTP, cPanel, Netlify, Vercel, GitHub Pages...). Aucun serveur ni base
 de données n'est nécessaire.
 
+Sur Vercel :
+- Application Preset : Other ; laisser Build Command et Output Directory vides.
+- Root Directory : le dossier qui contient index.html (./ s'il est à la racine du dépôt,
+  sinon le nom du sous-dossier, par exemple tca-site).
+- Nom du projet en minuscules (ex. tca-advisory) : il donne l'adresse tca-advisory.vercel.app.
+- Aucun réglage d'environnement : le formulaire passe par WhatsApp, sans serveur.
+- Le plan gratuit Hobby de Vercel est réservé à un usage personnel non commercial ;
+  un site d'entreprise relève du plan Pro (payant) ou d'un autre hébergeur.
+
 À compléter avant la mise en ligne
 ----------------------------------
 Recherchez les crochets [ ] dans index.html :
@@ -36,8 +54,19 @@ Recherchez les crochets [ ] dans index.html :
 - FAQ « Combien coûte votre accompagnement ? » : mode de rémunération
 - Pied de page : RC, ICE, IF
 - Liens « Mentions légales » et « Politique de confidentialité » (pages à créer)
-- Balise og:image : remplacer par l'adresse complète une fois le domaine choisi
-  (ex. https://www.votre-domaine.ma/assets/img/equipe.jpg)
+- mentions-legales.html et confidentialite.html : crochets [ ] (hébergeur, directeur de
+  publication, durée de conservation, n° de déclaration CNDP) ; faire valider par votre conseil
+
+Référencement (SEO) : quand le domaine est choisi
+-------------------------------------------------
+Remplacer « https://www.votre-domaine.ma » par le vrai domaine dans :
+- index.html et digital.html : bloc commenté « Domaine définitif » en haut de la page
+  (supprimer <!-- et --> autour des lignes canonical et og:url pour les activer)
+- index.html et digital.html : og:image → adresse complète, ex.
+  https://www.tca-advisory.ma/assets/img/partage-tca.jpg (partage-digital.jpg pour digital.html)
+- sitemap.xml (2 adresses) et robots.txt (ligne Sitemap, retirer le #)
+Puis : créer la propriété dans Google Search Console, y déclarer sitemap.xml,
+et créer la fiche Google Business Profile (adresse, téléphone, horaires, lien du site).
 
 Réglages utiles
 ---------------
@@ -45,43 +74,43 @@ Réglages utiles
 - Messages WhatsApp pré-remplis (y compris ceux de TCA Digital) : MESSAGES dans js/main.js
 - Seuil d'endettement du simulateur : SEUIL_ENDETTEMENT = 0.40 dans js/main.js
 - Couleurs : variables --noir, --or, --beige, --brun... en haut de css/styles.css
+- Titre Google et description : balises <title> et <meta name="description"> en haut
+  de chaque page (titre ≤ 60 caractères, description ≤ 160)
+- Données structurées (fiche entreprise + FAQ pour Google) : bloc application/ld+json en
+  haut de index.html. Si vous modifiez une question de la FAQ, modifiez-la aussi dans ce bloc.
 
-Formulaire de contact : 4 modes d'envoi
---------------------------------------
-Le mode se choisit en haut de js/main.js, avec deux lignes :
-    var ENVOI = 'whatsapp';
-    var ENDPOINT = '';
+Formulaire de contact : WhatsApp
+--------------------------------
+Le formulaire n'utilise aucun serveur. Quand le client clique sur « Envoyer ma demande
+sur WhatsApp », WhatsApp s'ouvre avec sa demande pré-remplie (nom, téléphone, projet,
+montant, ville, message) adressée au 06 68 17 32 99 ; il lui reste à appuyer sur Envoyer.
+Si WhatsApp ne s'ouvre pas, un lien de secours et le numéro de téléphone s'affichent.
+Limite : si le client n'appuie pas sur Envoyer dans WhatsApp, vous ne recevez rien.
+Le consentement (loi 09-08) reste obligatoire avant l'ouverture de WhatsApp.
 
-1) 'whatsapp' (par défaut) — aucun serveur
-   La demande s'ouvre dans WhatsApp, pré-remplie ; le client appuie sur Envoyer.
-   Limite : si le client n'envoie pas, vous ne recevez rien.
+Réseaux sociaux
+---------------
+- TCA Advisory : Instagram https://www.instagram.com/tca_advisory/
+                 LinkedIn  https://www.linkedin.com/in/tca-advisory-4ab86a44a/
+  (bandeau du haut, bloc Contact, pied de page, et données « sameAs » pour Google)
+- TCA Digital  : Instagram https://www.instagram.com/tca.digital/ + le même LinkedIn
+  (bloc « Prochaine étape » et pied de page de digital.html)
+Pour changer un lien : rechercher l'adresse dans index.html / digital.html et la remplacer.
 
-2) 'formspree' — le plus simple pour recevoir des e-mails
-   - Créez un compte sur formspree.io, puis un formulaire : vous obtenez une
-     adresse du type https://formspree.io/f/abcdwxyz
-   - Dans js/main.js :  ENVOI = 'formspree';  ENDPOINT = 'https://formspree.io/f/abcdwxyz';
-   - Chaque demande arrive par e-mail. L'offre gratuite limite le nombre d'envois par mois.
-
-3) 'php' — si votre hébergement accepte PHP (cPanel, hébergement mutualisé)
-   - Ouvrez envoyer.php et remplacez DESTINATAIRE et EXPEDITEUR par vos adresses
-     (EXPEDITEUR doit être une adresse de votre domaine, sinon les e-mails partent en spam).
-   - Dans js/main.js :  ENVOI = 'php';  ENDPOINT = 'envoyer.php';
-   - Envoyez aussi le dossier donnees/ (avec son fichier .htaccess) : les demandes y sont
-     enregistrées dans demandes.csv, qui s'ouvre dans Excel. Le .htaccess en bloque l'accès
-     depuis internet (serveurs Apache ; sur Nginx, demandez à l'hébergeur de bloquer /donnees).
-   - Mettez ENREGISTRER_CSV à false si vous ne voulez garder que l'e-mail.
-   - Si les e-mails n'arrivent pas, votre hébergeur bloque peut-être la fonction mail() :
-     il faut alors passer par un envoi SMTP (bibliothèque PHPMailer).
-
-4) 'sheets' — Google Sheet + e-mail, gratuit, sans hébergement PHP
-   - Suivez les 5 étapes en tête de backend/google-apps-script.gs
-   - Dans js/main.js :  ENVOI = 'sheets';  ENDPOINT = 'https://script.google.com/macros/s/.../exec';
-   - Chaque demande ajoute une ligne (avec une colonne « Statut ») et vous envoie un e-mail.
-
-Dans tous les modes : champ invisible anti-robots, consentement obligatoire (loi 09-08),
-et en cas d'échec, un lien propose au client d'envoyer sa demande par WhatsApp.
-
-Données personnelles : dès que les demandes sont conservées (fichier CSV, Google Sheet,
-boîte e-mail), il s'agit d'un traitement de données au sens de la loi 09-08.
+Données personnelles : les demandes reçues sur WhatsApp sont des données personnelles
+au sens de la loi 09-08.
 Prévoyez la déclaration auprès de la CNDP et décrivez ce traitement dans la politique
 de confidentialité (à faire valider par votre conseil).
+
+Menu, pied de page et pages services
+------------------------------------
+Les 7 pages TCA Advisory (accueil + 5 pages services + simulateur) ont le même menu et le
+même pied de page, copiés dans chaque fichier. Pour changer un lien du menu, une adresse ou
+un numéro : faites un « rechercher / remplacer » dans tous les fichiers .html.
+Le menu « Nos services » s'ouvre au survol (ordinateur) ; sur mobile, ses liens sont affichés
+directement dans le menu.
+Chaque page service a sa FAQ et son bloc « application/ld+json » (données Google) : si vous
+modifiez une question ou une réponse, modifiez-la aussi dans ce bloc, en haut du fichier.
+Les chiffres de l'exemple de rachat (rachat-de-credit.html) sont fictifs et calculés :
+gardez-les cohérents si vous les changez.
+

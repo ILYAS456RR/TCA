@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=20261113j">
+  <link rel="stylesheet" href="css/styles.css?v=20261124b">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -197,6 +197,7 @@
     <div class="container topbar__inner">
       <span>Casablanca · Maroc — Particuliers, MRE et entreprises</span>
       <div class="topbar__links">
+        <span class="langues"><a href="index.html" lang="fr" aria-current="true">FR</a><a href="ar/index.html" lang="ar" hreflang="ar">عربي</a><a href="en/index.html" lang="en" hreflang="en">EN</a></span>
         <a href="tel:+212668173299">06 68 17 32 99</a>
         <a class="topbar__wa" href="https://wa.me/212668173299" data-wa="general" target="_blank" rel="noopener">WhatsApp</a>
         <a class="topbar__social" href="https://www.instagram.com/tca_advisory/" target="_blank" rel="noopener" aria-label="TCA Advisory sur Instagram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
@@ -215,6 +216,16 @@
       </button>
       <nav class="nav" id="menu" aria-label="Navigation principale">
         <div class="nav__groupe">
+          <a class="nav__parent" href="qui-sommes-nous.html">Qui sommes-nous <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="nav__sous">
+          <a href="qui-sommes-nous.html#missions">Missions et approche</a>
+          <a href="qui-sommes-nous.html#equipe">Notre équipe</a>
+          <a href="qui-sommes-nous.html#equipe-digitale">Équipe digitale</a>
+          <a href="index.html#partenaires">Nos partenaires</a>
+          <a href="#avis">Avis clients</a>
+          </div>
+        </div>
+        <div class="nav__groupe">
           <a class="nav__parent" href="index.html#services">Nos services <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
           <div class="nav__sous">
           <a href="credit-immobilier-casablanca.html">Crédit immobilier</a>
@@ -222,9 +233,10 @@
           <a href="rachat-de-credit.html">Rachat de crédit</a>
           <a href="financement-entreprises.html" aria-current="page">Entreprises &amp; promoteurs</a>
           <a href="simulateur-credit-immobilier.html">Simulateur de crédit</a>
+          <a href="financement-participatif-mourabaha.html">Financement participatif</a>
+          <a href="guides.html">Guides pratiques</a>
           </div>
         </div>
-        <a href="simulateur-credit-immobilier.html">Simulateur</a>
         <a href="credit-immobilier-mre.html">Espace MRE</a>
         <a href="index.html#cabinet">Le cabinet</a>
         <a href="index.html#faq">FAQ</a>
@@ -444,6 +456,68 @@
   </main>
 
   <!-- Pied de page -->
+  <!-- Avis clients -->
+  <section class="avis" id="avis" data-avis aria-roledescription="carrousel" aria-label="Avis de nos clients">
+    <div class="container avis__inner">
+      <div class="avis__tete">
+        <span class="eyebrow eyebrow--fonce">Avis clients</span>
+        <h2>Ils nous font confiance.</h2>
+        <p class="muted">Dirigeants, particuliers et partenaires racontent leur accompagnement par le cabinet.</p>
+      </div>
+      <div class="avis__cadre">
+        <div class="avis__piste" aria-live="off">
+            <figure class="avis__slide" role="group" aria-roledescription="avis" aria-label="1 sur 4">
+              <span class="avis__guillemet" aria-hidden="true">“</span>
+              <blockquote><p>Mme Messaoudi a su dépasser le cadre du connu pour identifier des solutions solides, intelligentes et parfaitement conformes. […] Elle nous a accompagnés avec rigueur, transparence et engagement tout au long du processus, jusqu'à la signature, transformant une situation complexe en un dossier béton aboutissant à des accords bancaires avantageux.</p></blockquote>
+              <figcaption>
+                <span class="avis__initiales" aria-hidden="true">SA</span>
+                <span class="avis__auteur"><strong>Sara Adlouni</strong><span>Directrice de projet d'intégration ERP</span></span>
+              </figcaption>
+            </figure>
+            <figure class="avis__slide" role="group" aria-roledescription="avis" aria-label="2 sur 4">
+              <span class="avis__guillemet" aria-hidden="true">“</span>
+              <blockquote><p>Son accompagnement dans le montage de mon dossier de financement a été déterminant. Grâce à son expertise, sa rigueur et sa capacité à anticiper chaque détail, elle a su structurer mon projet de manière claire, solide et crédible. […] Je recommande Siham Messaoudi sans la moindre hésitation.</p></blockquote>
+              <figcaption>
+                <span class="avis__initiales" aria-hidden="true">MN</span>
+                <span class="avis__auteur"><strong>Mohamed Moncef Nasri</strong><span>Directeur général, T DE TEXTILE</span></span>
+              </figcaption>
+            </figure>
+            <figure class="avis__slide" role="group" aria-roledescription="avis" aria-label="3 sur 4">
+              <span class="avis__guillemet" aria-hidden="true">“</span>
+              <blockquote><p>L'équipe a su m'accompagner à chaque étape du processus, en me conseillant de manière transparente et en défendant efficacement mon dossier auprès des établissements bancaires. Grâce à leur expertise, leur réactivité et leur engagement, j'ai pu obtenir mon financement dans d'excellentes conditions et en toute sérénité.</p></blockquote>
+              <figcaption>
+                <span class="avis__initiales" aria-hidden="true">MS</span>
+                <span class="avis__auteur"><strong>Mohamed Shamed</strong><span>Directeur général, DOMUSPRO TRADE</span></span>
+              </figcaption>
+            </figure>
+            <figure class="avis__slide" role="group" aria-roledescription="avis" aria-label="4 sur 4">
+              <span class="avis__guillemet" aria-hidden="true">“</span>
+              <blockquote><p>Qualité du service satisfaisante en plus de l'écoute et de la réactivité de l'équipe.</p></blockquote>
+              <figcaption>
+                <span class="avis__initiales" aria-hidden="true">RN</span>
+                <span class="avis__auteur"><strong>Rufin Nzoghe</strong><span>Directeur général, Alios Finance Gabon</span></span>
+              </figcaption>
+            </figure>
+        </div>
+        <div class="avis__bas">
+          <div class="avis__points">
+              <button class="avis__point" type="button" aria-label="Afficher l'avis 1" aria-current="true"></button>
+              <button class="avis__point" type="button" aria-label="Afficher l'avis 2"></button>
+              <button class="avis__point" type="button" aria-label="Afficher l'avis 3"></button>
+              <button class="avis__point" type="button" aria-label="Afficher l'avis 4"></button>
+          </div>
+          <div class="avis__progression" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
+      <div class="avis__commandes">
+        <button class="avis__btn" type="button" data-avis-prec aria-label="Avis précédent"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="avis__btn" type="button" data-avis-suiv aria-label="Avis suivant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button class="avis__btn" type="button" data-avis-pause aria-pressed="false" aria-label="Mettre en pause le défilement des avis"><svg class="icone-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="icone-lecture" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg></button>
+        <span class="avis__compteur" aria-hidden="true"><span class="avis__actuel">01</span> / 04</span>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="container stack-lg">
       <div class="footer__cols">
@@ -463,10 +537,14 @@
           <a href="financement-entreprises.html">Entreprises &amp; promoteurs</a>
           <a href="financement-entreprises.html#leasing">Leasing</a>
           <a href="simulateur-credit-immobilier.html">Simulateur de crédit</a>
+          <a href="financement-participatif-mourabaha.html">Financement participatif</a>
+          <a href="guides.html">Guides pratiques</a>
         </nav>
         <nav aria-label="Le cabinet">
           <span class="eyebrow eyebrow--sm">Le cabinet</span>
-          <a href="index.html#cabinet">À propos</a>
+          <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+          <a href="qui-sommes-nous.html#equipe">Notre équipe</a>
+          <a href="#avis">Avis clients</a>
           <a href="index.html#methode">Notre méthode</a>
           <a href="index.html#international">Présence internationale</a>
           <a href="index.html#faq">FAQ</a>
@@ -476,10 +554,13 @@
         <div class="footer__contact">
           <span class="eyebrow eyebrow--sm">Nous joindre</span>
           <span>10, rue El Bassatine, Casablanca</span>
+          <span>Lundi – vendredi&nbsp;: 9h – 18h</span>
+          <span>Samedi&nbsp;: 9h – 13h</span>
           <a href="tel:+212668173299">06 68 17 32 99</a>
           <a href="https://wa.me/212668173299" data-wa="general" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
+      <nav class="footer__villes" aria-label="Nos villes"><span>Nous intervenons partout au Maroc&nbsp;:</span> <a href="credit-immobilier-casablanca.html">Casablanca</a> <a href="courtier-credit-immobilier-fes.html">Fès</a> <a href="courtier-credit-immobilier-meknes.html">Meknès</a> <a href="courtier-credit-immobilier-tanger.html">Tanger</a> <a href="courtier-credit-immobilier-agadir.html">Agadir</a> <a href="courtier-credit-immobilier-marrakech.html">Marrakech</a></nav>
       <div class="footer__legal">
         <span>Tamwil Capital Advisory — SARL au capital de 100&nbsp;000&nbsp;MAD — Siège&nbsp;: 10, rue El Bassatine, Casablanca — RC [—] · ICE [—] · IF [—]</span>
         <div class="footer__legal-links">
@@ -495,6 +576,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
   </a>
 
-  <script src="js/main.js?v=20261113b" defer></script>
+  <script src="js/main.js?v=20261124c" defer></script>
 </body>
 </html>

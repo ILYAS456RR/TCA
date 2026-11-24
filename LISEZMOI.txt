@@ -5,11 +5,22 @@ Contenu du dossier
 ------------------
 index.html            La page d'accueil TCA Advisory (tout le texte est ici)
 digital.html          La page TCA Digital (lien « TCA Digital » dans le menu)
+digital-realisations.html  Les réalisations de TCA Digital (galerie avec filtres) ; digital.html en montre un aperçu
 credit-immobilier-casablanca.html   Page service : crédit immobilier
 credit-immobilier-mre.html          Page service : crédit immobilier MRE (à distance)
 rachat-de-credit.html               Page service : rachat de crédit (avec exemple chiffré)
 financement-entreprises.html        Page service : professionnels, entreprises, promoteurs, leasing
 simulateur-credit-immobilier.html   Page du simulateur + explication du calcul
+qui-sommes-nous.html                Qui sommes-nous : le cabinet, missions, approche, équipe et équipe digitale
+courtier-credit-immobilier-fes.html (et -meknes, -tanger, -agadir, -marrakech)
+                                    Pages villes : un représentant TCA sur place
+guides.html                         Liste des guides pratiques
+guide-acheter-au-maroc-depuis-l-etranger.html, guide-capacite-emprunt-salaire.html,
+guide-frais-de-notaire-maroc.html, guide-aides-logement-garanties.html
+                                    Guides pratiques (règles en vigueur en novembre 2026)
+financement-participatif-mourabaha.html  Page financement participatif (Mourabaha)
+ar/index.html                       Page d'accueil en arabe (lecture de droite à gauche)
+en/index.html                       Page d'accueil en anglais
 css/styles.css        Styles de la page d'accueil (noir, or et tons clairs du logo)
 css/digital.css       Styles de la page TCA Digital (couleurs du logo Digital :
                       violet #5E2FF9 → pourpre #9845BB → rose #CD5E79 → corail #F26657,
@@ -47,11 +58,24 @@ Sur Vercel :
 
 À compléter avant la mise en ligne
 ----------------------------------
+- Guides : ils reprennent les règles en vigueur en novembre 2026 (aide au logement, frais
+  d'achat, règles de change pour les MRE). Relisez-les et mettez-les à jour quand la
+  réglementation change (loi de finances, décrets, Office des changes).
+- Pages en arabe et en anglais : à faire relire par un locuteur natif avant la mise en ligne.
+- qui-sommes-nous.html : photos de Fadi Zeroual et Chamsi Metouar (pour l'instant leurs
+  initiales). Déposez equipe-fadi.jpg et equipe-chamsi.jpg (carrées, 400 × 400 px environ)
+  dans assets/img/, puis remplacez la ligne <span class="membre-tca__photo ...">FZ</span>
+  (et CM) par la ligne <img ...> indiquée juste au-dessus en commentaire.
+- Nos partenaires (accueil, section « Nos partenaires ») : logos dans assets/img/partenaire-*.png
+  (CIH Bank, Banque Populaire, Crédit du Maroc, Saham Bank, SOFAC, Emerge Group). Pour en ajouter
+  un, déposez son logo (PNG à fond transparent) et copiez une ligne <li><img ...></li>.
+- Avis clients (bande défilante en bas de chaque page) : le texte est dans chaque page,
+  section <section class="avis">. Pour ajouter un avis, copiez un bloc <figure class="avis__slide">
+  et ajoutez un bouton <button class="avis__point"> ; mettez à jour « / 04 » et « 1 sur 4 ».
+  Les clients cités ont donné leur accord ; demandez-le aussi pour tout nouvel avis.
 Recherchez les crochets [ ] dans index.html :
 - [Adresse e-mail TCA]
-- [Horaires d'ouverture]
 - digital.html : [Adresse e-mail TCA Digital] ; le numéro WhatsApp est le même que TCA Advisory
-- FAQ « Combien coûte votre accompagnement ? » : mode de rémunération
 - Pied de page : RC, ICE, IF
 - Liens « Mentions légales » et « Politique de confidentialité » (pages à créer)
 - mentions-legales.html et confidentialite.html : crochets [ ] (hébergeur, directeur de

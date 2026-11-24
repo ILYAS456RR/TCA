@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=20261113j">
+  <link rel="stylesheet" href="css/styles.css?v=20261124b">
 
   <script type="application/ld+json">
   {
@@ -39,6 +39,20 @@
         "legalName": "Tamwil Capital Advisory",
         "description": "Courtier en crédit et cabinet de conseil en financement à Casablanca : crédit immobilier, dossiers MRE, rachat de crédit, leasing, financement d'entreprise, crédit promoteur et levée de fonds.",
         "telephone": "+212668173299",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "13:00"
+          }
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "10, rue El Bassatine",
@@ -261,6 +275,7 @@
     <div class="container topbar__inner">
       <span>Casablanca · Maroc — Particuliers, MRE et entreprises</span>
       <div class="topbar__links">
+        <span class="langues"><a href="index.html" lang="fr" aria-current="true">FR</a><a href="ar/index.html" lang="ar" hreflang="ar">عربي</a><a href="en/index.html" lang="en" hreflang="en">EN</a></span>
         <a href="tel:+212668173299">06 68 17 32 99</a>
         <a class="topbar__wa" href="https://wa.me/212668173299" data-wa="general" target="_blank" rel="noopener">WhatsApp</a>
         <a class="topbar__social" href="https://www.instagram.com/tca_advisory/" target="_blank" rel="noopener" aria-label="TCA Advisory sur Instagram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
@@ -280,6 +295,16 @@
       </button>
       <nav class="nav" id="menu" aria-label="Navigation principale">
         <div class="nav__groupe">
+          <a class="nav__parent" href="qui-sommes-nous.html">Qui sommes-nous <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="nav__sous">
+          <a href="qui-sommes-nous.html#missions">Missions et approche</a>
+          <a href="qui-sommes-nous.html#equipe">Notre équipe</a>
+          <a href="qui-sommes-nous.html#equipe-digitale">Équipe digitale</a>
+          <a href="#partenaires">Nos partenaires</a>
+          <a href="#avis">Avis clients</a>
+          </div>
+        </div>
+        <div class="nav__groupe">
           <a class="nav__parent" href="#services">Nos services <svg class="nav__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
           <div class="nav__sous">
           <a href="credit-immobilier-casablanca.html">Crédit immobilier</a>
@@ -287,9 +312,10 @@
           <a href="rachat-de-credit.html">Rachat de crédit</a>
           <a href="financement-entreprises.html">Entreprises &amp; promoteurs</a>
           <a href="simulateur-credit-immobilier.html">Simulateur de crédit</a>
+          <a href="financement-participatif-mourabaha.html">Financement participatif</a>
+          <a href="guides.html">Guides pratiques</a>
           </div>
         </div>
-        <a href="#simulateur">Simulateur</a>
         <a href="credit-immobilier-mre.html">Espace MRE</a>
         <a href="#cabinet">Le cabinet</a>
         <a href="#faq">FAQ</a>
@@ -342,59 +368,62 @@
         <div class="section-head" data-reveal>
           <div class="stack-sm">
             <span class="eyebrow eyebrow--fonce">Nos services</span>
-            <h2>Une approche personnalisée, un accompagnement direct.</h2>
+            <h2>Une approche personnalisée et un accompagnement direct.</h2>
           </div>
           <p class="muted">Particuliers, professionnels ou entreprises&nbsp;: nous analysons votre situation, montons un dossier conforme aux attentes des banques et négocions pour vous les meilleures conditions.</p>
         </div>
         <div class="services">
           <article class="service" id="particuliers" data-reveal>
-            <div class="service__tete">
+            <div class="service__visuel" aria-hidden="true">
               <span class="service__num">01</span>
-              <span class="service__icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span>
+              <svg viewBox="0 0 320 190" focusable="false"><path class="sv-sol" d="M24 164H296"/><path class="sv-arche" d="M98 164V94a62 62 0 0 1 124 0v70z"/><path class="sv-arche-int" d="M108 164V96a52 52 0 0 1 104 0v68"/><circle class="sv-soleil" cx="160" cy="66" r="13"/><circle class="sv-doux" cx="62" cy="134" r="15"/><path class="sv-doux" d="M62 149v15"/><path class="sv-plein" d="M134 124l26-22 26 22v40h-52z"/><path d="M124 130l36-30 36 30"/><path d="M134 122v42M186 122v42"/><path d="M152 164v-16a8 8 0 0 1 16 0v16"/><rect x="139" y="132" width="9" height="9"/><rect x="172" y="132" width="9" height="9"/><path d="M176 112v-12h7v18"/><circle cx="250" cy="126" r="9"/><circle cx="250" cy="126" r="3"/><path d="M259 126h22M273 126v7M279 126v5"/></svg>
             </div>
             <h3>Financement des particuliers</h3>
-            <p class="service__accroche">Réalisez votre projet, sans stress.</p>
+            <p class="service__accroche">Réalisez vos projets, sans stress.</p>
             <ul class="service__liste">
-              <li><strong><a href="credit-immobilier-casablanca.html">Crédit immobilier</a></strong><span>Résidence principale, secondaire ou investissement locatif, aux meilleures conditions.</span></li>
-              <li><strong>Crédit à la consommation</strong><span>Études, équipement, voyages&nbsp;: un crédit souple, adapté à votre budget.</span></li>
-              <li><strong><a href="credit-immobilier-casablanca.html#projets">Crédit hypothécaire</a></strong><span>Mobiliser un bien en garantie pour financer davantage ou réorganiser vos dettes.</span></li>
-              <li><strong><a href="rachat-de-credit.html">Rachat de crédits</a></strong><span>Regrouper et alléger vos mensualités en cours.</span></li>
-              <li><strong><a href="credit-immobilier-mre.html">Dossier MRE</a></strong><span>Constitué et suivi à distance, depuis votre pays de résidence.</span></li>
+              <li><strong><a href="credit-immobilier-casablanca.html">Crédit immobilier</a></strong><span>Réalisez votre rêve d'acquisition.</span></li>
+              <li><strong>Crédit à la consommation</strong><span>Donnez vie à vos projets personnels.</span></li>
+              <li><strong><a href="credit-immobilier-casablanca.html#projets">Crédit hypothécaire</a></strong><span>Valorisez votre patrimoine pour financer vos projets.</span></li>
             </ul>
-            <a class="link-arrow" href="credit-immobilier-casablanca.html">Découvrir le crédit immobilier <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--contour btn--sm service__btn" href="credit-immobilier-casablanca.html">Découvrir<span class="sr-only"> le financement des particuliers</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
           <article class="service" id="professionnels" data-reveal>
-            <div class="service__tete">
+            <div class="service__visuel" aria-hidden="true">
               <span class="service__num">02</span>
-              <span class="service__icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+              <svg viewBox="0 0 320 190" focusable="false"><path class="sv-sol" d="M24 164H296"/><path class="sv-arche" d="M98 164V94a62 62 0 0 1 124 0v70z"/><path class="sv-arche-int" d="M108 164V96a52 52 0 0 1 104 0v68"/><circle class="sv-soleil" cx="160" cy="66" r="13"/><circle class="sv-doux" cx="62" cy="134" r="15"/><path class="sv-doux" d="M62 149v15"/><path class="sv-plein" d="M130 118h60v46h-60z"/><path d="M130 118v46M190 118v46"/><path d="M126 104h68"/><path d="M124 118l4-14M196 118l-4-14"/><path d="M124 118q6 8 12 0q6 8 12 0q6 8 12 0q6 8 12 0q6 8 12 0q6 8 12 0"/><rect x="138" y="134" width="22" height="16"/><path d="M149 134v16"/><path d="M168 164v-28h14v28"/><path d="M236 164v-14M248 164v-24M260 164v-34"/><path d="M230 134l14-12 10 5 22-20"/><path d="M268 106h8v8"/></svg>
             </div>
             <h3>Financement des professionnels</h3>
-            <p class="service__accroche">Accompagner votre croissance.</p>
+            <p class="service__accroche">Des financements solides pour concrétiser vos ambitions.</p>
             <ul class="service__liste">
-              <li><strong><a href="financement-entreprises.html#professionnels">Investissement</a></strong><span>Expansion, modernisation ou acquisition&nbsp;: des financements solides, négociés pour vous.</span></li>
-              <li><strong><a href="financement-entreprises.html#leasing">Leasing</a></strong><span>Matériel, véhicules, équipements&nbsp;: modernisez vos outils sans entamer votre trésorerie.</span></li>
-              <li><strong><a href="financement-entreprises.html#professionnels">Trésorerie</a></strong><span>Anticiper vos besoins de liquidité et sécuriser vos opérations au quotidien.</span></li>
-              <li><strong>Développement d'activité</strong><span>Nouveaux marchés, diversification, digitalisation&nbsp;: financer vos ambitions.</span></li>
+              <li><strong><a href="financement-entreprises.html#professionnels">Investissement</a></strong><span>Accompagner votre croissance.</span></li>
+              <li><strong><a href="financement-entreprises.html#leasing">Leasing</a></strong><span>Facilitez vos acquisitions.</span></li>
+              <li><strong><a href="financement-entreprises.html#professionnels">Trésorerie</a></strong><span>Optimisez vos flux financiers.</span></li>
+              <li><strong>Développement d'activité</strong><span>Accélérez vos projets.</span></li>
             </ul>
-            <a class="link-arrow" href="financement-entreprises.html#professionnels">Financement des professionnels <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--contour btn--sm service__btn" href="financement-entreprises.html#professionnels">Découvrir<span class="sr-only"> le financement des professionnels</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
           <article class="service" id="entreprises" data-reveal>
-            <div class="service__tete">
+            <div class="service__visuel" aria-hidden="true">
               <span class="service__num">03</span>
-              <span class="service__icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M16 9h2a2 2 0 0 1 2 2v10"/><path d="M8 7h4M8 11h4M8 15h4"/><path d="M2 21h20"/></svg></span>
+              <svg viewBox="0 0 320 190" focusable="false"><path class="sv-sol" d="M24 164H296"/><path class="sv-arche" d="M98 164V94a62 62 0 0 1 124 0v70z"/><path class="sv-arche-int" d="M108 164V96a52 52 0 0 1 104 0v68"/><circle class="sv-soleil" cx="160" cy="66" r="13"/><circle class="sv-doux" cx="62" cy="134" r="15"/><path class="sv-doux" d="M62 149v15"/><path class="sv-plein" d="M146 84h28v80h-28z"/><rect x="122" y="112" width="24" height="52"/><rect x="146" y="84" width="28" height="80"/><rect x="174" y="102" width="24" height="62"/><path d="M153 96h5M162 96h5M153 108h5M162 108h5M153 120h5M162 120h5M153 132h5M162 132h5M153 144h5M162 144h5"/><path d="M129 124h4M136 124h4M129 136h4M136 136h4M129 148h4M136 148h4"/><path d="M181 114h4M188 114h4M181 126h4M188 126h4M181 138h4M188 138h4M181 150h4M188 150h4"/><path d="M230 150l14-10 12 4 20-24"/><path d="M268 120h8v8"/><circle cx="244" cy="140" r="2"/><circle cx="256" cy="144" r="2"/></svg>
             </div>
             <h3>Financement des entreprises</h3>
-            <p class="service__accroche">Structurer, financer, décider.</p>
+            <p class="service__accroche">Une vision claire, un accompagnement sur mesure.</p>
             <ul class="service__liste">
-              <li><strong><a href="financement-entreprises.html#entreprises">Structuration financière</a></strong><span>Équilibrer vos besoins de financement et votre capacité de remboursement.</span></li>
-              <li><strong>Crédits d'investissement</strong><span>Acquérir des actifs, moderniser, étendre vos activités.</span></li>
-              <li><strong><a href="financement-entreprises.html#promoteurs">Crédit promoteur</a></strong><span>Le financement de vos programmes immobiliers.</span></li>
-              <li><strong><a href="financement-entreprises.html#restructuration">Restructuration de dette</a></strong><span>Renégocier vos engagements bancaires.</span></li>
-              <li><strong><a href="financement-entreprises.html#levee-de-fonds">Levée de fonds</a></strong><span>Mandats auprès d'investisseurs et de partenaires.</span></li>
-              <li><strong>Accompagnement stratégique</strong><span>Anticiper les risques et saisir les opportunités pour vos décisions clés.</span></li>
+              <li><strong><a href="financement-entreprises.html#entreprises">Structuration financière</a></strong><span>Optimiser vos ressources, sécuriser vos projets.</span></li>
+              <li><strong><a href="financement-entreprises.html#entreprises">Crédits d'investissement</a></strong><span>Financer vos ambitions de développement.</span></li>
+              <li><strong>Accompagnement stratégique</strong><span>Un partenaire pour vos décisions clés.</span></li>
             </ul>
-            <a class="link-arrow" href="financement-entreprises.html">Entreprises et promoteurs <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--contour btn--sm service__btn" href="financement-entreprises.html#entreprises">Découvrir<span class="sr-only"> le financement des entreprises</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
+        </div>
+        <div class="services__aussi" data-reveal>
+          <span>Également&nbsp;:</span>
+          <a href="rachat-de-credit.html">Rachat de crédits</a>
+          <a href="credit-immobilier-mre.html">Crédit immobilier MRE</a>
+          <a href="financement-entreprises.html#promoteurs">Crédit promoteur</a>
+          <a href="financement-entreprises.html#restructuration">Restructuration de dette</a>
+          <a href="financement-entreprises.html#levee-de-fonds">Levée de fonds</a>
         </div>
       </div>
     </section>
@@ -593,6 +622,7 @@
           <p class="lead">Depuis Casablanca, TCA Advisory accompagne ses clients sur le marché marocain, au plus près des banques de la place.</p>
           <p class="muted">Le cabinet intervient également en <strong>Afrique de l'Ouest</strong> et en <strong>Afrique centrale</strong>, notamment sur des mandats de levée de fonds. TCA Advisory y opère via des partenariats dans les pays suivants&nbsp;: <strong>Sénégal</strong>, <strong>Côte d'Ivoire</strong>, <strong>Cameroun</strong> et <strong>Gabon</strong>.</p>
           <p class="muted">Pour les Marocains du monde, nous constituons et suivons les dossiers à distance, notamment depuis le <strong>Canada</strong>.</p>
+          <p class="muted">Au Maroc, nos représentants vous accompagnent à <a href="courtier-credit-immobilier-fes.html">Fès</a>, <a href="courtier-credit-immobilier-meknes.html">Meknès</a>, <a href="courtier-credit-immobilier-tanger.html">Tanger</a>, <a href="courtier-credit-immobilier-agadir.html">Agadir</a> et <a href="courtier-credit-immobilier-marrakech.html">Marrakech</a>.</p>
           <ul class="legende">
             <li><span class="legende__point legende__point--siege" aria-hidden="true"></span>Siège — Casablanca, Maroc</li>
             <li><span class="legende__point legende__point--partenaire" aria-hidden="true"></span>Partenariats en Afrique de l'Ouest et centrale</li>
@@ -649,7 +679,27 @@
             <div><h3>Connaissance des banques</h3><p>Procédures, critères d'octroi et interlocuteurs de la place.</p></div>
             <div><h3>Approche personnalisée</h3><p>Un interlocuteur dédié, dans la confidentialité et la transparence.</p></div>
           </div>
+          <a class="link-arrow" href="qui-sommes-nous.html">Découvrir le cabinet et l'équipe <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
+      </div>
+    </section>
+
+    <!-- Nos partenaires -->
+    <section class="section section--lin" id="partenaires">
+      <div class="container stack-lg">
+        <div class="stack-sm center" data-reveal>
+          <span class="eyebrow eyebrow--fonce">Nos partenaires</span>
+          <h2>Des partenaires de confiance.</h2>
+          <p class="muted">Banques, sociétés de financement et cabinets avec lesquels nous travaillons pour financer vos projets.</p>
+        </div>
+        <ul class="partenaires" data-reveal>
+          <li><img src="assets/img/partenaire-cih-bank.png" alt="CIH Bank" width="252" height="76" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/partenaire-banque-populaire.png" alt="Banque Populaire" width="309" height="96" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/partenaire-credit-du-maroc.png" alt="Crédit du Maroc" width="161" height="96" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/partenaire-saham-bank.png" alt="Saham Bank" width="303" height="96" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/partenaire-sofac.png" alt="SOFAC" width="392" height="95" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/partenaire-emerge-group.png" alt="Emerge Group" width="397" height="96" loading="lazy" decoding="async"></li>
+        </ul>
       </div>
     </section>
 
@@ -661,10 +711,6 @@
           <h2>Ce que nos clients nous demandent.</h2>
         </div>
         <div class="faq" data-reveal>
-          <details>
-            <summary>Combien coûte votre accompagnement&nbsp;?</summary>
-            <p>[À compléter&nbsp;: mode de rémunération du cabinet — honoraires, commission bancaire ou les deux.] Les conditions vous sont présentées par écrit avant tout engagement.</p>
-          </details>
           <details>
             <summary>Quels documents dois-je préparer&nbsp;?</summary>
             <p>En général&nbsp;: pièce d'identité, justificatifs de revenus, relevés bancaires récents et, pour un achat, le compromis ou l'acte de réservation. Nous vous envoyons la liste complète adaptée à votre profil dès le premier échange.</p>
@@ -699,7 +745,7 @@
             <li><svg class="icon icon--or" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="placeholder">[Adresse e-mail TCA]</span></li>
             <li><svg class="icon icon--or" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg><a href="https://www.instagram.com/tca_advisory/" target="_blank" rel="noopener">Instagram&nbsp;: @tca_advisory</a></li>
             <li><svg class="icon icon--or" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/tca-advisory-4ab86a44a/" target="_blank" rel="noopener">LinkedIn&nbsp;: TCA Advisory</a></li>
-            <li><svg class="icon icon--or" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="placeholder">[Horaires d'ouverture]</span></li>
+            <li><svg class="icon icon--or" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Du lundi au vendredi, 9h – 18h · Samedi, 9h – 13h</span></li>
           </ul>
         </div>
 
@@ -764,6 +810,68 @@
   </main>
 
   <!-- Pied de page -->
+  <!-- Avis clients -->
+  <section class="avis" id="avis" data-avis aria-roledescription="carrousel" aria-label="Avis de nos clients">
+    <div class="container avis__inner">
+      <div class="avis__tete">
+        <span class="eyebrow eyebrow--fonce">Avis clients</span>
+        <h2>Ils nous font confiance.</h2>
+        <p class="muted">Dirigeants, particuliers et partenaires racontent leur accompagnement par le cabinet.</p>
+      </div>
+      <div class="avis__cadre">
+        <div class="avis__piste" aria-live="off">
+            <figure class="avis__slide" role="group" aria-roledescription="avis" aria-label="1 sur 4">
+              <span class="avis__guillemet" aria-hidden="true">“</span>
+              <blockquote><p>Mme Messaoudi a su dépasser le cadre du connu pour identifier des solutions solides, intelligentes et parfaitement conformes. […] Elle nous a accompagnés avec rigueur, transparence et engagement tout au long du processus, jusqu'à la signature, transformant une situation complexe en un dossier béton aboutissant à des accords bancaires avantageux.</p></blockquote>
+              <figcaption>
+                <span class="avis__initiales" aria-hidden="true">SA</span>
+                <span class="avis__auteur"><strong>Sara Adlouni</strong><span>Directrice de projet d'intégration ERP</span></span>
+              </figcaption>
+            </figure>
+            <figure class="avis__slide" role="group" aria-roledescription="avis" aria-label="2 sur 4">
+              <span class="avis__guillemet" aria-hidden="true">“</span>
+              <blockquote><p>Son accompagnement dans le montage de mon dossier de financement a été déterminant. Grâce à son expertise, sa rigueur et sa capacité à anticiper chaque détail, elle a su structurer mon projet de manière claire, solide et crédible. […] Je recommande Siham Messaoudi sans la moindre hésitation.</p></blockquote>
+              <figcaption>
+                <span class="avis__initiales" aria-hidden="true">MN</span>
+                <span class="avis__auteur"><strong>Mohamed Moncef Nasri</strong><span>Directeur général, T DE TEXTILE</span></span>
+              </figcaption>
+            </figure>
+            <figure class="avis__slide" role="group" aria-roledescription="avis" aria-label="3 sur 4">
+              <span class="avis__guillemet" aria-hidden="true">“</span>
+              <blockquote><p>L'équipe a su m'accompagner à chaque étape du processus, en me conseillant de manière transparente et en défendant efficacement mon dossier auprès des établissements bancaires. Grâce à leur expertise, leur réactivité et leur engagement, j'ai pu obtenir mon financement dans d'excellentes conditions et en toute sérénité.</p></blockquote>
+              <figcaption>
+                <span class="avis__initiales" aria-hidden="true">MS</span>
+                <span class="avis__auteur"><strong>Mohamed Shamed</strong><span>Directeur général, DOMUSPRO TRADE</span></span>
+              </figcaption>
+            </figure>
+            <figure class="avis__slide" role="group" aria-roledescription="avis" aria-label="4 sur 4">
+              <span class="avis__guillemet" aria-hidden="true">“</span>
+              <blockquote><p>Qualité du service satisfaisante en plus de l'écoute et de la réactivité de l'équipe.</p></blockquote>
+              <figcaption>
+                <span class="avis__initiales" aria-hidden="true">RN</span>
+                <span class="avis__auteur"><strong>Rufin Nzoghe</strong><span>Directeur général, Alios Finance Gabon</span></span>
+              </figcaption>
+            </figure>
+        </div>
+        <div class="avis__bas">
+          <div class="avis__points">
+              <button class="avis__point" type="button" aria-label="Afficher l'avis 1" aria-current="true"></button>
+              <button class="avis__point" type="button" aria-label="Afficher l'avis 2"></button>
+              <button class="avis__point" type="button" aria-label="Afficher l'avis 3"></button>
+              <button class="avis__point" type="button" aria-label="Afficher l'avis 4"></button>
+          </div>
+          <div class="avis__progression" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
+      <div class="avis__commandes">
+        <button class="avis__btn" type="button" data-avis-prec aria-label="Avis précédent"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="avis__btn" type="button" data-avis-suiv aria-label="Avis suivant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button class="avis__btn" type="button" data-avis-pause aria-pressed="false" aria-label="Mettre en pause le défilement des avis"><svg class="icone-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="icone-lecture" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg></button>
+        <span class="avis__compteur" aria-hidden="true"><span class="avis__actuel">01</span> / 04</span>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="container stack-lg">
       <div class="footer__cols">
@@ -783,10 +891,14 @@
           <a href="financement-entreprises.html">Entreprises &amp; promoteurs</a>
           <a href="financement-entreprises.html#leasing">Leasing</a>
           <a href="simulateur-credit-immobilier.html">Simulateur de crédit</a>
+          <a href="financement-participatif-mourabaha.html">Financement participatif</a>
+          <a href="guides.html">Guides pratiques</a>
         </nav>
         <nav aria-label="Le cabinet">
           <span class="eyebrow eyebrow--sm">Le cabinet</span>
-          <a href="#cabinet">À propos</a>
+          <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+          <a href="qui-sommes-nous.html#equipe">Notre équipe</a>
+          <a href="#avis">Avis clients</a>
           <a href="#methode">Notre méthode</a>
           <a href="#international">Présence internationale</a>
           <a href="#faq">FAQ</a>
@@ -796,10 +908,13 @@
         <div class="footer__contact">
           <span class="eyebrow eyebrow--sm">Nous joindre</span>
           <span>10, rue El Bassatine, Casablanca</span>
+          <span>Lundi – vendredi&nbsp;: 9h – 18h</span>
+          <span>Samedi&nbsp;: 9h – 13h</span>
           <a href="tel:+212668173299">06 68 17 32 99</a>
           <a href="https://wa.me/212668173299" data-wa="general" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
+      <nav class="footer__villes" aria-label="Nos villes"><span>Nous intervenons partout au Maroc&nbsp;:</span> <a href="credit-immobilier-casablanca.html">Casablanca</a> <a href="courtier-credit-immobilier-fes.html">Fès</a> <a href="courtier-credit-immobilier-meknes.html">Meknès</a> <a href="courtier-credit-immobilier-tanger.html">Tanger</a> <a href="courtier-credit-immobilier-agadir.html">Agadir</a> <a href="courtier-credit-immobilier-marrakech.html">Marrakech</a></nav>
       <div class="footer__legal">
         <span>Tamwil Capital Advisory — SARL au capital de 100&nbsp;000&nbsp;MAD — Siège&nbsp;: 10, rue El Bassatine, Casablanca — RC [—] · ICE [—] · IF [—]</span>
         <div class="footer__legal-links">
@@ -815,6 +930,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
   </a>
 
-  <script src="js/main.js?v=20261113b" defer></script>
+  <script src="js/main.js?v=20261124c" defer></script>
 </body>
 </html>

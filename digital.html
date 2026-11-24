@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="css/digital.css?v=20261113e">
+  <link rel="stylesheet" href="css/digital.css?v=20261124a">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -76,7 +76,7 @@
       <nav class="nav" id="menu" aria-label="Navigation TCA Digital">
         <a href="#expertises">Expertises</a>
         <a href="#offre">Offre</a>
-        <a href="#realisations">Réalisations</a>
+        <a href="digital-realisations.html">Réalisations</a>
         <a href="#methode">Méthode</a>
         <a href="#equipe">Équipe</a>
         <a class="nav__retour" href="index.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>TCA Advisory</a>
@@ -97,7 +97,7 @@
             <a class="btn btn--degrade" href="https://wa.me/212668173299" data-wa="cadrage" target="_blank" rel="noopener">Planifier une réunion de cadrage
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn--contour" href="#realisations">Voir nos réalisations</a>
+            <a class="btn btn--contour" href="digital-realisations.html">Voir nos réalisations</a>
           </div>
         </div>
 
@@ -288,7 +288,7 @@
       </div>
     </section>
 
-    <!-- Réalisations -->
+    <!-- Réalisations : aperçu (la galerie complète est sur digital-realisations.html) -->
     <section class="section" id="realisations">
       <div class="container stack-lg">
         <div class="section-head" data-reveal>
@@ -296,9 +296,33 @@
             <span class="eyebrow">Portfolio &amp; réalisations</span>
             <h2>Des expériences concrètes, des compétences en action.</h2>
           </div>
-          <p>Sélection de projets menés ou développés dans des contextes différents.</p>
+          <p>Réseaux sociaux, sites web, intelligence artificielle&nbsp;: un aperçu de nos projets. Retrouvez-les tous sur la page dédiée.</p>
         </div>
-        <div class="projets">
+        <div class="projets projets--galerie">
+          <article class="projet projet--photo" data-reveal>
+            <figure class="projet__visuel projet__visuel--photo">
+              <img src="assets/img/realisation-voyage-et-partage.jpg" alt="Profil Instagram de l'agence Voyage et Partage, avec ses visuels de circuits au Maroc" width="1200" height="675" loading="lazy" decoding="async">
+              <span class="projet__label">SOCIAL</span>
+            </figure>
+            <div class="projet__corps">
+              <span class="etiquette">CONTENU INSTAGRAM</span>
+              <h3>Voyage et Partage</h3>
+              <p>Agence de voyage sur mesure basée à Fès&nbsp;: visuels des circuits (cascades d'Ouzoud, Marrakech, Merzouga), stories à la une par destination, publications en français et en arabe.</p>
+              <a class="projet__lien" href="https://www.instagram.com/voyageetpartage.ma/" target="_blank" rel="noopener">Voir le compte Instagram <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="projet projet--photo" data-reveal>
+            <figure class="projet__visuel projet__visuel--photo">
+              <img src="assets/img/realisation-megacampus.jpg" alt="Profil Instagram de Megacampus, avec ses visuels de formations" width="1200" height="675" loading="lazy" decoding="async">
+              <span class="projet__label">SOCIAL</span>
+            </figure>
+            <div class="projet__corps">
+              <span class="etiquette">CONTENU INSTAGRAM</span>
+              <h3>Megacampus</h3>
+              <p>Établissement de formation à Casablanca (licences, masters professionnels, MBA)&nbsp;: visuels de recrutement par filière, annonces aux étudiants et campagnes thématiques.</p>
+              <a class="projet__lien" href="https://www.instagram.com/megacampus/" target="_blank" rel="noopener">Voir le compte Instagram <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
           <article class="projet projet--photo" data-reveal>
             <figure class="projet__visuel projet__visuel--photo">
               <img src="assets/img/realisation-restaurant.jpg" alt="Page d'accueil du site web réalisé pour le restaurant Candy Fruit à Casablanca" width="1120" height="630" loading="lazy" decoding="async">
@@ -310,41 +334,10 @@
               <p>Développement complet du site web et réalisation d'un shooting photographique pour accompagner la présence digitale de l'établissement.</p>
             </div>
           </article>
-          <article class="projet projet--photo" data-reveal>
-            <figure class="projet__visuel projet__visuel--photo">
-              <img src="assets/img/realisation-aromatheque.jpg" alt="Profil Instagram de la parfumerie Aromathèque" width="1120" height="630" loading="lazy" decoding="async">
-              <span class="projet__label">SOCIAL</span>
-            </figure>
-            <div class="projet__corps">
-              <span class="etiquette etiquette--peche">STRATÉGIE SOCIAL MEDIA</span>
-              <h3>Aromathèque</h3>
-              <p>Projet appliqué auprès d'une entreprise de parfumerie à Casablanca&nbsp;: stratégie Instagram, analyse des KPI et contribution à la relation client.</p>
-            </div>
-          </article>
-          <article class="projet projet--photo" data-reveal>
-            <figure class="projet__visuel projet__visuel--photo">
-              <img src="assets/img/realisation-delices-du-bled.jpg" alt="Pot d'amlou de pistaches Délices du Bled, produit du terroir marocain" width="960" height="540" loading="lazy" decoding="async">
-              <span class="projet__label">BLED</span>
-            </figure>
-            <div class="projet__corps">
-              <span class="etiquette">PROJET ENTREPRENEURIAL</span>
-              <h3>Délices du Bled</h3>
-              <p>Projet d'étude autour de la création d'une petite entreprise de produits du terroir&nbsp;: marketing, suivi des produits et réseaux sociaux.</p>
-            </div>
-          </article>
-          <article class="projet projet--photo" data-reveal>
-            <figure class="projet__visuel projet__visuel--photo">
-              <img src="assets/img/realisation-agent-ia.jpg" alt="Écran de l'agent IA d'analyse nutritionnelle : analyse d'un plat de couscous" width="496" height="279" loading="lazy" decoding="async">
-              <span class="projet__label">IA</span>
-            </figure>
-            <div class="projet__corps">
-              <span class="etiquette etiquette--peche">INTELLIGENCE ARTIFICIELLE</span>
-              <h3>Agent IA d'analyse nutritionnelle</h3>
-              <p>Projet réalisé en équipe pour analyser les repas et soutenir le suivi nutritionnel. Deuxième place obtenue lors d'un hackathon.</p>
-            </div>
-          </article>
         </div>
-        <p class="en-cours" data-reveal><strong>PROJET EN COURS</strong><span>Système d'analyse lunaire en préparation pour un hackathon associé à la NASA.</span></p>
+        <div class="btn-row btn-row--centre" data-reveal>
+          <a class="btn btn--degrade" href="digital-realisations.html">Voir toutes nos réalisations (9) <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
     </section>
 
@@ -501,7 +494,7 @@
         <nav class="footer__liens" aria-label="Pied de page TCA Digital">
           <a href="#expertises">Expertises</a>
           <a href="#offre">Offre</a>
-          <a href="#realisations">Réalisations</a>
+          <a href="digital-realisations.html">Réalisations</a>
           <a href="#methode">Méthode</a>
           <a href="#equipe">Équipe</a>
           <a href="#contact">Contact</a>
@@ -521,6 +514,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
   </a>
 
-  <script src="js/main.js?v=20261113b" defer></script>
+  <script src="js/main.js?v=20261124c" defer></script>
 </body>
 </html>

@@ -1208,3 +1208,62 @@ html[lang="ar"] .lead, html[lang="ar"] p { line-height: 1.85; }
   .topbar a.topbar__social { display: none; }
   .topbar .langues a { padding-inline: 5px; }
 }
+
+/* Le mot de la fondatrice (Qui sommes-nous, 24 nov. 2026) */
+.mot { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+.mot__media { position: relative; margin: 0; padding: 0 24px 24px 0; width: 100%; max-width: 430px; justify-self: center; }
+.mot__cadre { position: absolute; top: 24px; left: 24px; right: 0; bottom: 0; border: 1px solid rgba(201, 164, 92, 0.55); background: var(--taupe-clair); }
+.mot__media img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 3%; filter: sepia(0.12) contrast(1.03); }
+.mot__texte { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.mot__titre { margin: 0; font-size: inherit; line-height: 1; }
+.mot__guillemet { display: block; height: 40px; margin-top: 18px; font-family: var(--serif); font-size: 110px; line-height: 0.75; color: var(--or); }
+.mot__lettre { display: grid; gap: 16px; }
+.mot__lettre p { margin: 0; color: var(--texte-taupe); line-height: 1.75; }
+.mot__lettre .mot__intro { font-family: var(--serif); font-size: clamp(22px, 2.1vw, 27px); line-height: 1.4; color: var(--titre); }
+.mot__devise { margin: 26px 0 0; font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2vw, 26px); color: var(--or-fonce); }
+.mot__signature { display: flex; flex-direction: column; gap: 4px; margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--or); min-width: 240px; }
+.mot__signature strong { font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--titre); }
+.mot__signature span { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--texte-taupe-doux); }
+@media (max-width: 900px) {
+  .mot { grid-template-columns: 1fr; gap: 36px; }
+  .mot__media { max-width: 320px; }
+}
+
+/* ==========================================================================
+   25 nov. 2026 : 5 services (accueil) et page « Nos services »
+   ========================================================================== */
+@media (min-width: 1101px) {
+  .services--5 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .services--5 .service { grid-column: span 2; }
+  .services--5 .service:nth-child(4) { grid-column: 2 / span 2; }
+  .services--5 .service:nth-child(5) { grid-column: 4 / span 2; }
+}
+.services__tous { display: flex; justify-content: center; }
+
+/* Page Nos services : sommaire */
+.sommaire-services { background: var(--lin); border-bottom: 1px solid var(--brun-filet-doux); }
+.sommaire-services ol {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px;
+  margin: 0; padding: 22px 0; list-style: none;
+}
+.sommaire-services a {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px;
+  border: 1px solid var(--brun-filet-doux); border-radius: 999px; background: var(--surface);
+  font-size: 14px; color: var(--texte); text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+.sommaire-services a span { font-family: var(--serif); font-size: 18px; color: var(--or-fonce); }
+.sommaire-services a:hover { border-color: var(--or); color: var(--accent-texte-fort); }
+
+/* Page Nos services : TPE / PME / grandes entreprises */
+.segments { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+.segments > .encart { height: 100%; }
+.segments .encart h3 { font-size: 24px; }
+.encart--accent { background: linear-gradient(rgba(226, 199, 143, 0.16), rgba(226, 199, 143, 0.16)), var(--surface); box-shadow: 0 18px 40px -30px rgba(79, 71, 64, 0.5), inset 4px 0 0 var(--or); }
+.encart--accent h3 { font-size: 24px; }
+.segments__fin { max-width: 760px; margin-inline: auto; text-align: center; }
+@media (max-width: 1000px) { .segments { grid-template-columns: 1fr; } }
+@media (max-width: 700px) {
+  .sommaire-services ol { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding: 16px 0; scrollbar-width: none; }
+  .sommaire-services li { flex: none; }
+}

@@ -11,6 +11,7 @@ credit-immobilier-mre.html          Page service : crédit immobilier MRE (à di
 rachat-de-credit.html               Page service : rachat de crédit (avec exemple chiffré)
 financement-entreprises.html        Page service : professionnels, entreprises, promoteurs, leasing
 simulateur-credit-immobilier.html   Page du simulateur + explication du calcul
+nos-services.html                   Nos services : les 5 services en détail et notre démarche
 qui-sommes-nous.html                Qui sommes-nous : le cabinet, missions, approche, équipe et équipe digitale
 courtier-credit-immobilier-fes.html (et -meknes, -tanger, -agadir, -marrakech)
                                     Pages villes : un représentant TCA sur place
@@ -31,14 +32,20 @@ confidentialite.html  Politique de confidentialité loi 09-08 (modèle à compl�
 404.html              Page « introuvable » affichée par Vercel pour une adresse inexistante
 robots.txt            Autorise l'indexation par Google
 sitemap.xml           Plan du site pour Google (domaine à renseigner)
-vercel.json           Réglages Vercel : mise en cache des images, CSS et JS (7 jours)
+vercel.json           Réglages Vercel : adresses sans « .html » (ex. /qui-sommes-nous),
+                      mise en cache des images, CSS et JS (7 jours)
 .vercelignore         Empêche la publication de ce guide sur Vercel (fichier caché)
 assets/img/           Logos TCA Advisory (clair pour fonds noirs / taupe aux couleurs d'origine), logos TCA Digital (couleur /
                       DIGITAL en blanc pour fonds sombres), portrait (haut de page), photo de l'équipe (aperçu de lien), favicons
 
 Voir le site
 ------------
-Double-cliquez sur index.html : il s'ouvre dans votre navigateur.
+Le plus simple : l'adresse Vercel du site (ex. tca-site-theta.vercel.app).
+Les liens entre les pages sont écrits sans « .html » (ex. /qui-sommes-nous) :
+Vercel les reconnaît grâce à vercel.json. En double-cliquant sur index.html
+sur votre ordinateur, la page s'affiche mais les liens vers les autres pages
+ne s'ouvrent pas ; un hébergeur autre que Vercel doit aussi accepter ces adresses
+(Netlify le fait d'office ; sinon, demander la réécriture vers le fichier .html).
 Une connexion internet est nécessaire pour les polices (Cormorant Garamond, Manrope).
 
 Mettre en ligne
